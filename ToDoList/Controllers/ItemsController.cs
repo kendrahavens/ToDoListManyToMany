@@ -51,13 +51,14 @@ namespace ToDoList.Controllers
       return RedirectToAction("Show",  new { id = itemId });
     }
 
-    // [HttpPost("/items/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   Item.ClearAll();
-    //   return View();
-    // }
-    //
+    [HttpPost("/items/delete")]
+    public ActionResult Delete(int itemId)
+    {
+      Item item = Item.Find(itemId);
+      item.Delete();
+      return RedirectToAction("Index");
+    }
+
     // [HttpGet("/categories/{categoryId}/items/{itemId}/edit")]
     // public ActionResult Edit(int categoryId, int itemId)
     // {

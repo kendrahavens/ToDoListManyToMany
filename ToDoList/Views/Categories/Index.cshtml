@@ -12,5 +12,18 @@
   </ul>
 }
 
+<h4>Delete a category:</h4>
+
+<form action='/categories/delete' method='post'>
+  <label for='categoryId'>Select a category</label>
+  <select id='categoryId' name='categoryId' type='text'>
+    @foreach (var category in @Model)
+    {
+      <option value='@category.GetId()'>@category.GetName()</option>
+    }
+  </select>
+  <button type='submit'>Delete</button>
+</form>
+
 <h4><a href="/categories/new">Add a new category</a></h4>
 <h4><a href="/">Return home</a></h4>

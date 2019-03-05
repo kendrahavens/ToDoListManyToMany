@@ -13,7 +13,7 @@ namespace ToDoList.Models
       _name = categoryName;
       _id = id;
     }
-    
+
 
     public string GetName()
     {
